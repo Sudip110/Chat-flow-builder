@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# React Flow Diagram Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This React application leverages the `reactflow` library to create an interactive flow diagram editor. Users can drag and drop nodes onto the canvas, connect them with edges, and manage node data through a sidebar interface. The application includes functionality to identify unconnected nodes and handle node selection.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Node Drag and Drop**: Users can drag nodes from the sidebar and drop them onto the canvas.
+- **Dynamic Node Creation**: Nodes are dynamically created with unique IDs and labels.
+- **Node Selection**: Clicking on a node highlights it and allows data modification through the sidebar.
+- **Edge Creation**: Nodes can be connected with edges.
+- **Unconnected Node Detection**: Functionality to find nodes that are not connected to any other node.
+- **Data Handling**: Modify node data through a sidebar input, with real-time updates to the node's label.
+- **Click Detection**: Clicks outside of nodes reset the selected node state.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- ReactFlow
+- Material-UI (for icons)
+- Custom Components: `TextNode`, `MessageNode`, `ButtonEdge`, `Header`, `Sidebar`
+- Custom CSS
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+    ```bash
+    cd <project-directory>
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running the Application
 
-### `npm run eject`
+1. Start the development server:
+    ```bash
+    npm start
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Open your browser and navigate to `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Code Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `App.js`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is the main component that sets up the React Flow environment. It handles the state for nodes, edges, and the selected node. It also manages the drag-and-drop functionality, node data updates, and click detection.
 
-## Learn More
+#### Key Functions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **onConnect**: Adds edges between nodes.
+- **onDrop**: Handles the dropping of nodes onto the canvas.
+- **onNodeClick**: Sets the selected node when a node is clicked.
+- **findUnconnectedNodes**: Finds nodes that are not connected to any other node.
+- **handleNodeDataChange**: Updates the data of the selected node.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Sidebar.js`
 
-### Code Splitting
+The sidebar component allows users to drag nodes onto the canvas and modify the data of the selected node.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Key Functions
 
-### Analyzing the Bundle Size
+- **onDragStart**: Prepares the node for dragging.
+- **handleInputChange**: Updates the node data when the input changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Header.js`
 
-### Making a Progressive Web App
+Displays a header that includes functionality for checking unconnected nodes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Custom Components
 
-### Advanced Configuration
+- **TextNode**: Custom node component for text nodes.
+- **MessageNode**: Custom node component for message nodes.
+- **ButtonEdge**: Custom edge component with a button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Example Usage
 
-### Deployment
+1. Drag a node from the sidebar and drop it onto the canvas.
+2. Click on a node to select it.
+3. Modify the node data using the input field in the sidebar.
+4. Connect nodes by dragging edges between them.
+5. Click outside the nodes to reset the selection.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! Please follow these steps to contribute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
+
+## License
+
+
+
+## Acknowledgments
+
+This project uses the `reactflow` library for creating flow diagrams. Special thanks to the React Flow team for their work.
+
+---
