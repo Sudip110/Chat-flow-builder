@@ -1,4 +1,4 @@
-# React Flow Diagram Application
+# Chat Flow Builder Application
 
 ## Overview
 
